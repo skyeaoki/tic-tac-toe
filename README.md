@@ -1,2 +1,2 @@
 # tic-tac-toe
-A simple tic tac toe game
+Javascript 2-player tic tac toe game. UI design by teamtreehouse.com.

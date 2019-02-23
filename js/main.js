@@ -44,7 +44,7 @@
 	// Display the player's letter when they mouse over the boxes if it's not already filled
 	boxes.addEventListener('mouseover', (event) => {
 		if(!event.target.className.includes('box-filled')) {
-			event.target.style.backgroundImage = 'url("img/' + playersTurn + '.svg")';
+			event.target.style.backgroundImage = 'url("/img/' + playersTurn + '.svg")';
 		}
 	});
 	

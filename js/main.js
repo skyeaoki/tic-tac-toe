@@ -38,13 +38,13 @@
 	
 	/****** SETTING UP THE BOARD ******/
 	// Player O goes first 
-	let playersTurn = 'O';
+	let playersTurn = 'o';
 	player1.className += ' active';
 	
 	// Display the player's letter when they mouse over the boxes if it's not already filled
 	boxes.addEventListener('mouseover', (event) => {
 		if(!event.target.className.includes('box-filled')) {
-			event.target.style.backgroundImage = 'url("/img/' + playersTurn + '.svg")';
+			event.target.style.backgroundImage = 'url("img/' + playersTurn + '.svg")';
 		}
 	});
 	
@@ -62,7 +62,7 @@
 		if(!event.target.className.includes('box-filled')) {
 
 			// Apply the corresponding class to the selected box	
-			if(playersTurn === 'O') {
+			if(playersTurn === 'o') {
 				event.target.className += ' box-filled-1';	
 				// Add the number the square selected to the oSquares array 
 				oSquares.push(parseInt(event.target.id));
@@ -73,14 +73,14 @@
 			}
 			
 			// Add the active class to the player who's turn it is, and remove it from the other player
-			if(playersTurn === 'O') {
+			if(playersTurn === 'o') {
 				player2.className += ' active';
 				player1.className = 'players';
-				playersTurn = 'X';
+				playersTurn = 'x';
 			} else {
 				player1.className += ' active';
 				player2.className = 'players';
-				playersTurn = 'O';
+				playersTurn = 'o';
 			}
 			
 			/****** WINNING THE GAME ******/
@@ -108,7 +108,7 @@
 				checkIfIncludes(oSquares, 3, 6, 9) ||
 				checkIfIncludes(oSquares, 1, 5, 9) ||
 				checkIfIncludes(oSquares, 3, 5,	7) ) {
-					winner = 'O';
+					winner = 'o';
 			} else if (
 				checkIfIncludes(xSquares, 1, 2, 3) ||
 				checkIfIncludes(xSquares, 4, 5, 6) ||
@@ -118,16 +118,16 @@
 				checkIfIncludes(xSquares, 3, 6, 9) ||
 				checkIfIncludes(xSquares, 1, 5, 9) ||
 				checkIfIncludes(xSquares, 3, 5,	7) ) {
-					winner = 'X';
+					winner = 'x';
 			}
 
 			// If the winner is O then display the O win screen
-			if(winner == 'O') {
+			if(winner == 'o') {
 				winMessage.textContent = 'Winner';
 				winScreen.className = 'screen screen-win screen-win-one';
 				displayBlock(winScreen);
 			// If the winner is X then display the X win screen
-			} else if (winner == 'X') {
+			} else if (winner == 'x') {
 				winScreen.className = 'screen screen-win screen-win-two';
 				winMessage.textContent = 'Winner';
 				displayBlock(winScreen);
@@ -145,7 +145,7 @@
 		winner = 0;
 	
 		// Player O goes first 
-		playersTurn = 'O';
+		playersTurn = 'o';
 		player2.className = 'players';
 		player1.className += ' active';
 		
